@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ActivityChart from "./ActivityChart";
 
-const API_TOKEN = "211e3ba5-273a-489c-a376-691c68db7527";
-const NAME = "Jordan Hudgens";
+const API_TOKEN = "2bc30331-896f-482a-a451-00acdf27488e";
+const NAME = "Coty Scott";
 const ENDPOINT = "https://devcamp.com/api/metrics/code_editor_grouped_by_day";
 
 interface IActivityElement {
