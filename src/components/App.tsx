@@ -29,17 +29,19 @@ const App = () => {
         },
       })
       .then((response: { data: IActivityElement[] }) => {
-        if (response?.data) {
-          const durations = response.data.map((stat: IActivityElement) =>
-            stat.duration && stat.duration > 0
-              ? (stat.duration / 3600).toFixed(2)
-              : 0
-          );
-          setSeries([
-            { name: "Coding activity", type: "area", data: durations },
-          ]);
-          setDates(response.data.map((stat: IActivityElement) => stat.date));
-        }
+          console.log("API Response", response.data);
+
+          if (response?.data) {
+            const durations = response.data.map((stat: IActivityElement) =>
+              stat.duration && stat.duration > 0
+                ? (stat.duration / 3600).toFixed(2)
+                : 0
+            );
+            setSeries([
+              { name: "Coding activity", type: "area", data: durations },
+            ]);
+            setDates(response.data.map((stat: IActivityElement) => stat.date));
+          }
         setIsLoading(false);
       })
       .catch((error) => {
